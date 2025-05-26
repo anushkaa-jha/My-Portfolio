@@ -5,568 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anushka Jha | Software Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #4361ee;
-            --secondary: #3a0ca3;
-            --accent: #f72585;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --gray: #6c757d;
-            --card-bg: #ffffff;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        section {
-            padding: 80px 0;
-        }
-
-        h1, h2, h3 {
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
-
-        p {
-            margin-bottom: 1rem;
-            color: var(--gray);
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--primary);
-            transition: var(--transition);
-        }
-
-        a:hover {
-            color: var(--accent);
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-            font-size: 2.2rem;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--primary);
-            margin: 1rem auto;
-        }
-
-        /* Header */
-        header {
-            background-color: var(--card-bg);
-            box-shadow: var(--shadow);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 2rem;
-        }
-
-        .nav-links a {
-            font-weight: 600;
-        }
-
-        .mobile-menu {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding-top: 100px;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        }
-
-        .hero-content {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .hero-text {
-            flex: 1;
-        }
-
-        .hero-image {
-            flex: 1;
-            text-align: center;
-        }
-
-        .hero-image img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--primary);
-            box-shadow: var(--shadow);
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero h2 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-buttons {
-            margin-top: 2rem;
-        }
-
-        /* About Section */
-        .about {
-            background-color: var(--card-bg);
-        }
-
-        .about-content {
-            display: flex;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text {
-            flex: 2;
-        }
-
-        .about-stats {
-            flex: 1;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .stat-item {
-            background-color: var(--light);
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-item h3 {
-            font-size: 2rem;
-            color: var(--primary);
-        }
-
-        /* Skills Section */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background-color: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .skill-category h3 {
-            margin-bottom: 1.5rem;
-            color: var(--secondary);
-        }
-
-        .skill-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-
-        .skill-item {
-            background-color: var(--light);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: var(--dark);
-            font-weight: 500;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .project-header h3 {
-            color: var(--secondary);
-        }
-
-        .project-date {
-            background-color: var(--light);
-            padding: 0.3rem 0.8rem;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .project-description {
-            margin-bottom: 1.5rem;
-            color: var(--gray);
-        }
-
-        .project-features {
-            margin-bottom: 1.5rem;
-            padding-left: 1.2rem;
-        }
-
-        .project-features li {
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-
-        .project-tech span {
-            background-color: var(--light);
-            padding: 0.3rem 0.8rem;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        /* Education Section */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background-color: var(--primary);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -1px;
-        }
-
-        .timeline-item {
-            padding: 1.5rem 2.5rem;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-date {
-            position: absolute;
-            width: 120px;
-            background-color: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 0.5rem;
-            border-radius: 5px;
-            font-weight: 600;
-            top: 1.5rem;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-date {
-            right: -140px;
-        }
-
-        .timeline-item:nth-child(even) .timeline-date {
-            left: -140px;
-        }
-
-        .timeline-content {
-            padding: 1.5rem;
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .institution {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-
-        /* Certifications Section */
-        .certifications {
-            background-color: var(--card-bg);
-        }
-
-        .certifications-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .certification-card {
-            background-color: var(--light);
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            text-align: center;
-        }
-
-        .certification-card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Contact Section */
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .info-item i {
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--secondary);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            color: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero-content {
-                flex-direction: column-reverse;
-                text-align: center;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .about-content {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: var(--card-bg);
-                flex-direction: column;
-                padding: 1rem 0;
-                box-shadow: var(--shadow);
-                align-items: center;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links li {
-                margin: 0.5rem 0;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .skills-container {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline::before {
-                left: 30px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 0;
-            }
-
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-
-            .timeline-date {
-                left: 0 !important;
-                right: auto !important;
-                top: 0;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero h2 {
-                font-size: 1.5rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .btn-outline {
-                margin-top: 1rem;
-                margin-left: 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -579,6 +18,7 @@
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
@@ -617,11 +57,11 @@
                 </div>
                 <div class="about-stats">
                     <div class="stat-item">
-                        <h3>8+</h3>
+                        <h3>10+</h3>
                         <p>Projects</p>
                     </div>
                     <div class="stat-item">
-                        <h3>3</h3>
+                        <h3>8</h3>
                         <p>Certifications</p>
                     </div>
                     <div class="stat-item">
@@ -629,7 +69,7 @@
                         <p>Dedication</p>
                     </div>
                     <div class="stat-item">
-                        <h3>5+</h3>
+                        <h3>10+</h3>
                         <p>Technologies</p>
                     </div>
                 </div>
@@ -642,43 +82,43 @@
             <h2 class="section-title">My Skills</h2>
             <div class="skills-container">
                 <div class="skill-category">
-                    <h3>Programming Languages</h3>
+                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
                     <div class="skill-items">
-                        <span class="skill-item">Java</span>
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">SQL</span>
-                        <span class="skill-item">HTML/CSS</span>
-                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item"><i class="fab fa-java"></i> Java</span>
+                        <span class="skill-item"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-item"><i class="fas fa-database"></i> SQL</span>
+                        <span class="skill-item"><i class="fab fa-html5"></i> HTML/CSS</span>
+                        <span class="skill-item"><i class="fab fa-js"></i> JavaScript</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Machine Learning</h3>
+                    <h3><i class="fas fa-brain"></i> Machine Learning</h3>
                     <div class="skill-items">
-                        <span class="skill-item">Supervised Learning</span>
-                        <span class="skill-item">Deep Learning</span>
-                        <span class="skill-item">Time Series Analysis</span>
-                        <span class="skill-item">Generative AI</span>
-                        <span class="skill-item">Scikit-learn</span>
+                        <span class="skill-item"><i class="fas fa-chart-line"></i> Supervised Learning</span>
+                        <span class="skill-item"><i class="fas fa-network-wired"></i> Deep Learning</span>
+                        <span class="skill-item"><i class="fas fa-clock"></i> Time Series Analysis</span>
+                        <span class="skill-item"><i class="fas fa-robot"></i> Generative AI</span>
+                        <span class="skill-item"><i class="fas fa-cogs"></i> Scikit-learn</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Frameworks & Tools</h3>
+                    <h3><i class="fas fa-tools"></i> Frameworks & Tools</h3>
                     <div class="skill-items">
-                        <span class="skill-item">Pandas</span>
-                        <span class="skill-item">NumPy</span>
-                        <span class="skill-item">Matplotlib</span>
-                        <span class="skill-item">Git</span>
-                        <span class="skill-item">VS Code</span>
+                        <span class="skill-item"><i class="fas fa-table"></i> Pandas</span>
+                        <span class="skill-item"><i class="fas fa-calculator"></i> NumPy</span>
+                        <span class="skill-item"><i class="fas fa-chart-bar"></i> Matplotlib</span>
+                        <span class="skill-item"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="skill-item"><i class="fas fa-code"></i> VS Code</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Soft Skills</h3>
+                    <h3><i class="fas fa-users"></i> Soft Skills</h3>
                     <div class="skill-items">
-                        <span class="skill-item">Problem Solving</span>
-                        <span class="skill-item">Teamwork</span>
-                        <span class="skill-item">Communication</span>
-                        <span class="skill-item">Leadership</span>
-                        <span class="skill-item">Time Management</span>
+                        <span class="skill-item"><i class="fas fa-lightbulb"></i> Problem Solving</span>
+                        <span class="skill-item"><i class="fas fa-people-carry"></i> Teamwork</span>
+                        <span class="skill-item"><i class="fas fa-comments"></i> Communication</span>
+                        <span class="skill-item"><i class="fas fa-flag"></i> Leadership</span>
+                        <span class="skill-item"><i class="fas fa-clock"></i> Time Management</span>
                     </div>
                 </div>
             </div>
@@ -689,7 +129,7 @@
         <div class="container">
             <h2 class="section-title">My Projects</h2>
             <div class="projects-grid">
-                <!-- Advanced Projects -->
+                <!-- Existing Projects -->
                 <div class="project-card">
                     <div class="project-header">
                         <h3>AI-Based Real-Time Fraud Detection</h3>
@@ -725,54 +165,109 @@
                         <span>Pandas</span>
                     </div>
                 </div>
-
-                <!-- Beginner Projects -->
                 <div class="project-card">
                     <div class="project-header">
-                        <h3>Student Management System</h3>
-                        <span class="project-date">Jan 2023</span>
+                        <h3>Food Ordering App (Android)</h3>
+                        <span class="project-date">MAD Lab (5th Sem)</span>
                     </div>
-                    <p class="project-description">A Java console application to manage student records with CRUD operations and data persistence.</p>
+                    <p class="project-description">A simple Android application for ordering food items. Includes basic animations, sound effects, and cart functionalities.</p>
                     <ul class="project-features">
-                        <li>Object-oriented design principles</li>
-                        <li>File I/O for data storage</li>
-                        <li>Input validation and error handling</li>
+                        <li>Interactive UI with animations</li>
+                        <li>Cart management system</li>
+                        <li>SQLite database integration</li>
                     </ul>
                     <div class="project-tech">
                         <span>Java</span>
-                        <span>OOP</span>
-                        <span>File Handling</span>
+                        <span>XML</span>
+                        <span>Android SDK</span>
+                        <span>SQLite</span>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header">
-                        <h3>To-Do List Application</h3>
-                        <span class="project-date">Nov 2022</span>
+                        <h3>Hospital Management System (Servlets)</h3>
+                        <span class="project-date">Web Development</span>
                     </div>
-                    <p class="project-description">A simple Python GUI application to manage daily tasks with add, complete, and delete functionality.</p>
+                    <p class="project-description">A basic hospital management web application built using Java Servlets. Features modules for managing doctors, patients, medicines, and user authentication.</p>
                     <ul class="project-features">
-                        <li>Tkinter for GUI</li>
-                        <li>Basic CRUD operations</li>
-                        <li>Task persistence using JSON</li>
+                        <li>Role-based access control</li>
+                        <li>CRUD operations for all entities</li>
+                        <li>Secure authentication system</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span>Java</span>
+                        <span>JSP</span>
+                        <span>Servlets</span>
+                        <span>MySQL</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Sudoku Game (Java Swing)</h3>
+                        <span class="project-date">Desktop Application</span>
+                    </div>
+                    <p class="project-description">A GUI-based Sudoku puzzle game. Includes puzzle generation, difficulty selection, and a backtracking-based solver.</p>
+                    <ul class="project-features">
+                        <li>Multiple difficulty levels</li>
+                        <li>Auto-solver algorithm</li>
+                        <li>Interactive GUI</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span>Java</span>
+                        <span>Swing</span>
+                        <span>AWT</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Speech Emotion Recognition</h3>
+                        <span class="project-date">ML Project</span>
+                    </div>
+                    <p class="project-description">A system to recognize emotions from audio input using deep learning. Involves preprocessing, feature extraction, and training with CNN architectures (1D and 2D).</p>
+                    <ul class="project-features">
+                        <li>Audio signal processing</li>
+                        <li>Feature extraction with librosa</li>
+                        <li>CNN model training</li>
                     </ul>
                     <div class="project-tech">
                         <span>Python</span>
-                        <span>Tkinter</span>
-                        <span>JSON</span>
+                        <span>TensorFlow</span>
+                        <span>librosa</span>
+                        <span>Keras</span>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header">
-                        <h3>Temperature Converter</h3>
-                        <span class="project-date">Sep 2022</span>
+                        <h3>Weather App (React.js)</h3>
+                        <span class="project-date">Web Development</span>
                     </div>
-                    <p class="project-description">A simple web application to convert between Celsius and Fahrenheit with a clean interface.</p>
+                    <p class="project-description">A simple weather application that fetches real-time weather data for any location using the OpenWeatherMap API. Built with React.</p>
                     <ul class="project-features">
-                        <li>HTML/CSS for UI</li>
-                        <li>JavaScript for logic</li>
+                        <li>API integration</li>
                         <li>Responsive design</li>
+                        <li>Location-based weather</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span>React.js</span>
+                        <span>JavaScript</span>
+                        <span>OpenWeatherMap API</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Snake Game (Java to Web Conversion)</h3>
+                        <span class="project-date">Web Development</span>
+                    </div>
+                    <p class="project-description">A classic Snake game converted from Java to a modern web version using HTML CSS JS. Features pixel-perfect animation, responsive controls, and deployable on GitHub Pages.</p>
+                    <ul class="project-features">
+                        <li>Game loop implementation</li>
+                        <li>Score tracking</li>
+                        <li>Responsive controls</li>
                     </ul>
                     <div class="project-tech">
                         <span>HTML</span>
@@ -780,23 +275,161 @@
                         <span>JavaScript</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Number Guessing Game</h3>
-                        <span class="project-date">Jul 2022</span>
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Aug 2021 - June 2025</div>
+                    <div class="timeline-content">
+                        <h3>Bachelor Of Engineering</h3>
+                        <h4>Chandigarh University, Gharuan | CGPA: 8.19</h4>
+                        <p>Major Courses: Object-oriented Programming(OOPs), Operating Systems, Complexity Analysis, Databases, Computer Network, Machine Learning, Image Processing, Data Structures and Algorithms.</p>
                     </div>
-                    <p class="project-description">A console-based game where the player guesses a randomly generated number with limited attempts.</p>
-                    <ul class="project-features">
-                        <li>Random number generation</li>
-                        <li>User input handling</li>
-                        <li>Score tracking</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>Basic I/O</span>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2019 - 2020</div>
+                    <div class="timeline-content">
+                        <h3>Intermediate (CBSE)</h3>
+                        <h4>Rose Public School, Darbhanga | Percentage: 91.8%</h4>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2017 - 2018</div>
+                    <div class="timeline-content">
+                        <h3>Matriculation (CBSE)</h3>
+                        <h4>Rose Public School, Darbhanga | Percentage: 94.6%</h4>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Data Visualization with Tableau Specialization</h3>
+                    </div>
+                    <p>Completed comprehensive training in data visualization techniques using Tableau.</p>
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/P68F2QTWGULA" target="_blank" class="btn btn-small">View Certificate</a>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Android App Development</h3>
+                    </div>
+                    <p>34 Hours comprehensive course on Android development covering modern practices.</p>
+                    <a href="https://www.udemy.com/certificate/UC-d6e0f9a9-bc81-4ff9-b356-4a813509b4ea/" target="_blank" class="btn btn-small">View Certificate</a>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <i class="fas fa-certificate"></i>
+                        <h3>IBM Introduction to Machine Learning</h3>
+                    </div>
+                    <p>Specialization covering fundamental ML concepts and practical applications.</p>
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/Y28GUENP4WBQ" target="_blank" class="btn btn-small">View Certificate</a>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <i class="fas fa-certificate"></i>
+                        <h3>SQL Bootcamp - MySQL</h3>
+                    </div>
+                    <p>From beginner to advanced MySQL concepts and database management.</p>
+                    <a href="https://www.udemy.com/certificate/UC-3ed1a368-8e9b-4bd6-87f3-f9f0a0490b7c/" target="_blank" class="btn btn-small">View Certificate</a>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Complete Java Programming Bootcamp</h3>
+                    </div>
+                    <p>Comprehensive Java programming course covering core to advanced concepts.</p>
+                    <a href="https://www.udemy.com/certificate/UC-9a1ddbdc-0e42-4180-b7eb-5bc154f20e5a/" target="_blank" class="btn btn-small">View Certificate</a>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Intro to AR/VR/MR/XR</h3>
+                    </div>
+                    <p>Technologies, Applications & Issues in extended reality platforms.</p>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/H66TSSBH77UM" target="_blank" class="btn btn-small">View Certificate</a>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Introduction to Augmented Reality and ARCore</h3>
+                    </div>
+                    <p>Fundamentals of AR development using Google's ARCore platform.</p>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/2WGQ69T3BW4L" target="_blank" class="btn btn-small">View Certificate</a>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Build a Quiz App with Java on Android Studio</h3>
+                    </div>
+                    <p>Beginner course on Android app development creating a quiz application.</p>
+                    <a href="https://www.udemy.com/certificate/UC-6645c3ec-a78a-4bc2-8454-aa496214868f/" target="_blank" class="btn btn-small">View Certificate</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>anushkaa@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 9999900000</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Bihar, India</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Anushka Jha. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
